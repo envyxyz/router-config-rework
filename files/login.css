@@ -1,0 +1,258 @@
+@import url("./_global.css");
+
+article.login {
+  background-color: var(--color-surface);
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-evenly;
+  width: 336px;
+  height: 386px;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  border-radius: var(--border-radius-size);
+  padding: 8px 20px 0px 20px;
+  box-shadow: none;
+  outline: 0;
+  border: 0;
+  animation: none !important;
+  box-shadow: 0 0 20px -2px hsla(0, 0%, 0%, 0.5);
+  border: 1px solid var(--color-border);
+}
+
+article.login:has(footer.forget div.forget-info[style*="block"]) {
+  height: 492px;
+}
+
+article.over-user {
+  display: block;
+  position: fixed;
+  bottom: calc(10% - 40px);
+  left: 50%;
+  translate: -50%;
+  width: 100vh;
+  height: 20px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+article.login header {
+  display: grid;
+  place-items: center;
+  margin: 0;
+  filter: saturate(0) brightness(2);
+}
+
+article.login header img {
+  margin: 0 !important;
+  user-select: none;
+}
+
+article.login .forget,
+article.over-user .forget {
+  color: var(--color-text-muted);
+  align-self: center;
+  cursor: pointer;
+}
+
+.login .forget-link:hover,
+.over-user .forget-link:hover {
+  color: var(--color-text-secondary);
+}
+
+div.form-group.ico-groups {
+  margin: 0 !important;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5em;
+  background-color: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  border-radius: calc(var(--border-radius-size) / 2);
+  padding: 6px 4px;
+  position: relative;
+  max-height: 46px;
+}
+
+div.form-group.ico-groups#loginLangWrap {
+  top: 8px;
+  user-select: none;
+  cursor: pointer !important;
+}
+
+/* .addLang {
+  user-select: none;
+  cursor: pointer !important;
+} */
+
+div.form-group.ico-groups#loginPwdWrap {
+  bottom: 8px;
+}
+
+.ico-groups .ico {
+  position: unset;
+  margin: 0 !important;
+  width: 30px;
+  display: grid;
+  place-items: center;
+}
+
+.ico:before {
+  font-size: 18px;
+  font-family: "Material Icons";
+  color: var(--color-text-muted);
+}
+
+.icon-lang:before {
+  content: "language";
+  font-family: "Material Icons";
+}
+
+.icon-lock:before {
+  content: "lock";
+  margin-left: -3px;
+}
+
+#login-password-caps {
+  font-size: 0;
+  font-family: "Material Icons";
+  position: absolute;
+  right: 5px;
+  bottom: 6px;
+  display: grid;
+  place-items: center;
+}
+
+#login-password-caps[style*="block"]::before {
+  content: "\e318";
+  position: relative;
+  font-size: 22px;
+  color: var(--color-text-muted);
+}
+
+.form-control {
+  height: auto !important;
+  padding-left: 0 !important;
+  background-color: transparent;
+  border: none;
+}
+
+.form-control:focus {
+  border: none !important;
+  outline: 0;
+  box-shadow: none !important;
+}
+
+.lang,
+input#login-password,
+label {
+  color: var(--color-text-secondary) !important;
+}
+
+input#login-password {
+  padding-right: 25px;
+}
+
+#errMsg {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  opacity: 1;
+}
+
+/* Buttons */
+
+.btn-primary {
+  color: #fff;
+  background-color: var(--color-accent);
+  border-color: var(--color-accent-hover);
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary.focus,
+.btn-primary:active,
+.btn-primary.active,
+.open > .btn-primary.dropdown-toggle {
+  color: #fff;
+  background-color: var(--color-accent-hover);
+  border-color: var(--color-accent);
+}
+
+.country .caret {
+  float: right;
+  margin-right: -5.5px;
+  margin-top: 10px;
+}
+
+.dropdown ul.dropdown-menu {
+  /* display: block !important; */
+  background-color: var(--color-surface-alt);
+  color: var(--color-text-primary);
+  margin-left: -14%;
+  width: 120%;
+  margin-top: 5.5%;
+}
+
+.dropdown ul.dropdown-menu li a {
+  color: var(--color-text-primary) !important;
+}
+
+.dropdown ul.dropdown-menu li a:hover {
+  background-color: var(--color-accent);
+}
+
+/* 
+
+
+.country .ico-text {
+  padding: 0;
+  padding-left: 42px;
+}
+
+.country .form-control {
+  border: 0;
+}
+
+.country .dropdown {
+  line-height: 40px;
+} */
+
+.test-tips {
+  position: absolute;
+  width: 300px;
+  height: 200px;
+  left: 50%;
+  margin-left: -150px;
+  top: 100px;
+  z-index: 99;
+  padding: 10px;
+  color: #000;
+  background-color: #ccc;
+  border-radius: 8px;
+}
+
+/* MISC */
+
+article.over-user.box-shadow {
+  box-shadow: 0 0 #fff !important;
+}
+
+article.over-user header,
+.caret {
+  display: none;
+}
+
+.no-border {
+  border: none !important;
+}
+
+.shake {
+  -webkit-animation: shake 0.2s ease 2;
+  -moz-animation: shake 0.2s ease 2;
+  -o-animation: shake 0.2s ease 2;
+  animation: shake 0.2s ease 2;
+}
